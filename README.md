@@ -49,6 +49,15 @@ Gradle's build scripts give you the full power of Groovy.
 
 ### Task dependencies
 You can declare tasks that depend on other tasks.
+```gradle
+task hello << {
+	println 'Hello, world!'
+}
+
+task intro(dependsOn: hello) << {
+	println "I'm Gradle"
+}
+```
 
 ### Default tasks
 Gradle allows you to define one or more default tasks that are executed if no other tasks are specified.
@@ -66,4 +75,21 @@ For each project in the build, Gradle creates an object of type **Project** and 
 * Any method you call in your build script which is not defined in the build script, is delegated to the Project object.
 * Any property you access in your build script which is not defined in the build script, is deleaged to the Project object.
 
+### The Script API
 
+### Declaring variables
+
+#### Local variables
+
+#### Extra properties
+All enhanced objects in Gradle's domain model can hold extraa user-defined properties. Extra properties can be added, read and set via the owning object's **ext** property. Alternatively, an **ext** block can be used to add multiple properties at once.
+
+### More about Tasks
+
+#### Defining tasks
+
+#### Locating tasks
+
+#### Configuring tasks
+
+#### Adding dependencies to a task
