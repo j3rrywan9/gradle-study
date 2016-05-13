@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+defaultTasks 'hello', 'upper'
+
+println name
+println project.name
+
+task hello << {
+	println 'Hello world!'
+}
+
+task count << {
+	4.times { print "$it" }
+}
+
+task upper << {
+	String someString = 'mY_nAmE'
+	println "Original: " + someString
+	println "Upper case: " + someString.toUpperCase()
+}
+
+idea {
+	project {
+		vcs = 'Git'
+	}
+	module {
+		downloadSources = true
+	}
+}
