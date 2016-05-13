@@ -167,3 +167,12 @@ The IDEA plugin adds a number of tasks to your project. The main tasks that you 
 
 ### Tasks
 The IDEA plugin adds the tasks shown below to a project. Notice that the **clean** task does not depend on the **cleanIdeaWorkspace** task.
+
+### Configuration
+[IdeaProject](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaProject.html)
+
+Allows configuring project information
+
+[IdeaModule](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html)
+
+Allows configuring module information
