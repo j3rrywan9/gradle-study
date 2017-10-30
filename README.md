@@ -8,7 +8,8 @@ For running Gradle, firstly add the environment variable **GRADLE_HOME**.
 This should point to the unpacked files from the Gradle website.
 Next add **$GRADLE_HOME/bin** to your PATH environment variable.
 
-You run Gradle via the `gradle` command. To check if Gradle is properly installed just type `gradle -v`.
+You run Gradle via the `gradle` command.
+To check if Gradle is properly installed just type `gradle -v`.
 The output shows the Gradle version and also the local environment configuration.
 
 ## Using the Gradle
@@ -18,16 +19,7 @@ You can use the `-b` option to select another build file.
 
 ## [The Gradle Wrapper](gradle_wrapper.md)
 
-## Dependency Management
-
-Most projects are not completely self-contained. They need files built by other projects in order to be compiled or tested and so on.
-
-These incoming files form the dependencies of the project.
-Gradle allows you to tell it what the dependencies of your project are, so that it can take care of finding these dependencies, and making them available in your build.
-The dependencies might need to be downloaded from a remote Maven or Ivy repository, or located in a local directory, or may need to be built by another project in the same multi-project build.
-We call this process dependency resolution.
-
-With Gradle, you simply declare the "names" of your dependencies, and other layers determine where to get those dependencies from.
+## [Dependency Management](dependency_management.md)
 
 ### Declaring your dependencies
 
@@ -224,3 +216,4 @@ Allows configuring project information
 [IdeaModule](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html)
 
 Allows configuring module information
+
