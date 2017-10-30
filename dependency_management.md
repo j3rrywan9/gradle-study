@@ -90,3 +90,52 @@ This configuration is an example of Exposing Artifacts for Consumption.
 Various plugins add further standard configurations.
 You can also define your own custom configurations to use in your build.
 
+## External dependencies
+
+There are various types of dependencies that you can declare.
+One such type is an *external dependency*.
+This is a dependency on some files built outside the current build, and stored in a repository of some kind, such as Maven central, or a corporate Maven or Ivy repository, or a directory in the local file system.
+
+To define an external dependency, you add it to a dependency configuration:
+```gradle
+dependencies {
+  compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.8.Final'
+}
+```
+An external dependency is identified using group, name and version attributes
+Depending on which kind of repository you are using, group and version may be optional.
+
+The shortcut form for declaring external dependencies looks like “group:name:version”.
+```gradle
+dependencies {
+  compile 'org.hibernate:hibernate-core:3.6.7.Final'
+}
+```
+
+## Repositories
+
+How does Gradle find the files for external dependencies?
+Gradle looks for them in a *repository*.
+A repository is really just a collection of files, organized by group, name and version.
+Gradle understands several different repository formats, such as Maven and Ivy, and several different ways of accessing the repository, such as using the local file system or HTTP.
+
+By default, Gradle does not define any repositories.
+You need to define at least one before you can use external dependencies.
+One option is use the Maven central repository:
+```gradle
+repositories {
+  mavenCentral()
+}
+```
+
+You can also have repositories on the local file system.
+This works for both Maven and Ivy repositories.
+```gradle
+repositories {
+  ivy {
+    // URL can refer to a local directory
+    url "../local-repo"
+  }
+}
+```
+
