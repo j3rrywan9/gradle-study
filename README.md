@@ -21,49 +21,7 @@ You can use the `-b` option to select another build file.
 
 ## [Dependency Management](dependency_management.md)
 
-### Declaring your dependencies
-
-In Gradle dependencies are grouped into configurations.
-A configuration is simply a named set of dependencies.
-We will refer to them as dependency configurations.
-
-## Build Script Basics
-
-### Projects and tasks
-
-Everything in Gradle sits on top of two basic concepts: projects and tasks.
-
-Every Gradle build is made up of one or more projects.
-
-Each project is made up of one or more tasks.
-A task represents some atomic piece of work which a build performs.
-This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository.
-
-You run a Gradle build using the **gradle** command.
-The **gradle** command looks for a file called **build.gradle** in the current directory.
-We call this build.gradle file a build script, although strictly speaking it is a build configuration script, as we will see later.
-The build script defines a project and its tasks.
-
-### Build scripts are code
-
-Gradle's build scripts give you the full power of Groovy.
-
-### Task dependencies
-
-You can declare tasks that depend on other tasks.
-```gradle
-task hello << {
-	println 'Hello, world!'
-}
-
-task intro(dependsOn: hello) << {
-	println "I'm Gradle"
-}
-```
-
-### Default tasks
-
-Gradle allows you to define one or more default tasks that are executed if no other tasks are specified.
+## [Build Script](build_script.md)
 
 ## Build Init Plugin
 
